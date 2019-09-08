@@ -1,0 +1,26 @@
+
+* {
+   font-family: 'Inconsolata', monospace;
+   font-size: 16px;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem!important;
+}
+
+.main-nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+.main-nav li {
+  float: left;
+}
+
+.main-nav li a {
+  display: block;
+  padding: 4px;
+}
