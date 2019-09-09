@@ -17,6 +17,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!-- Font Awesome -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <title>Luiz's website</title>
@@ -29,8 +30,7 @@
       <nav class="navbar navbar-expand-md">
         <ul class="ml-auto m-4 navbar-nav mr-auto">
           <li class="nav-item pr-2"><a href="#home">Home</a> &bull;</li>
-          <li class="nav-item pr-2"><a href="#education">Education</a> &bull;</li>
-          <li class="nav-item pr-2"><a href="#experience">Experience</a> &bull;</li>
+          <li class="nav-item pr-2"><a href="#timeline">Professional Timeline</a> &bull;</li>
           <li class="nav-item pr-2"><a href="#publications">Publications</a> &bull;</li>
           <li class="nav-item pr-2"><a href="#contact">Contact</a></li>
         </ul>
@@ -44,34 +44,48 @@
           <img src="img/profile.jpeg" alt="Profile picture" class="img-thumbnail">
         </div>
         <div class="col">
-          <p>I'm Luiz Augusto de Macêdo Morais. I'm a PhD candidate in Computer Science at the <a href="https://www.google.com/maps/place/UFCG+-+Campus+Campina+Grande/@-7.2172305,-35.9119891,16.92z/data=!4m5!3m4!1s0x7ac1e2c7816c38f:0xd98e854f0b0d6fe1!8m2!3d-7.2171368!4d-35.9097543" target="_blank"><i class="fa fa-map-marker"></i> Federal University of Campina Grande</a>.</p>
+          <p>I'm Luiz Augusto de Macêdo Morais. I'm a PhD candidate in Computer Science at the <a href="https://www.google.com/maps/place/UFCG+-+Campus+Campina+Grande/@-7.2172305,-35.9119891,16.92z/data=!4m5!3m4!1s0x7ac1e2c7816c38f:0xd98e854f0b0d6fe1!8m2!3d-7.2171368!4d-35.9097543" target="_blank"><i class="fa fa-map-marker"></i> Universidade Federal de Campina Grande</a>.</p>
           <p>My research interests include <a href="http://enrico.bertini.io/s/anthropographics-chi2017.pdf" target="_blank"><i class="fa fa-book"></i></i> anthropographics</a>, <a href="http://yvonnejansen.me/articles/VIS2016%20-%20Embedded%20Data%20Representations.pdf" target="_blank"><i class="fa fa-book"></i> situated data visualization</a>, and <a href="https://hal.inria.fr/hal-02113248/document"><i class="fa fa-book" target="_blank"></i> data physicalization</a>.</p>
-          <p>You can follow what I'm coding on <a href="https://github.com/luizaugustomm" target="_blank"><i class="fa fa-github"></i> Github</a> and my personal thoughts on <a href="https://twitter.com/luizaugustomm" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>.</p>
+          <p>You can follow what I've been coding on <a href="https://github.com/luizaugustomm" target="_blank"><i class="fa fa-github"></i> Github</a> and my personal thoughts on <a href="https://twitter.com/luizaugustomm" target="_blank"><i class="fa fa-twitter"></i> Twitter</a>.</p>
         </div>
       </section>
 
       <hr>
 
-      <section id="education" class="row mb-4">
-        <h1>Education</h1>
-      </section>
-
-      <hr>
-
-      <section id="experience" class="row mb-4">
-        <h1>Professional Experience</h1>
+      <section id="timeline" class="row mb-4">
+        <div class="col">
+          <svg id="timeline-vis"></svg>
+        </div>
       </section>
 
       <hr>
 
       <section id="publications" class="row mb-4">
-        <h1>Publications</h1>
+        <div class="col">
+          <h1>Publications</h1>
+          <p>
+            [PDF] MORAIS, L. A. M.; Andrade, N.; Sousa, D. M. C.; Ponciano, L. Defamiliarization, Representation Granularity, and User Experience: a Qualitative Study with Two Situated Visualizations. In: 12th IEEE Pacific Visualization Symposium. Bangkok, Thailand, 2019.
+          </p>
+          <p>
+            [PDF] MORAIS, L. A. M.; FIGUEIREDO, J. C. A. ; GUERRERO, D. D. S. . Students Satisfaction with Mastery Learning in an Introductory Programming Course. In: Simpósio Brasileiro de Informática na Educação, 2014, Dourados - MS. XXV Simpósio Brasileiro de Informática na Educação - SBIE2014. Porto Alegre - RS: Sociedade Brasileira de Computação, 2014. p. 1048-1052.
+          </p>
+        </div>
       </section>
 
       <hr>
 
       <section id="contact" class="row mb-4">
-        <h1>Contact</h1>
+        <div class="col">
+          <h1>Contact</h1>
+          <email>
+            Email: [my github username] at lsd.ufcg.edu.br
+          </email>
+          <address>
+            Laboratório de Sistemas Distribuídos - Room Rainha<br>
+            882 Aprígio Veloso Street - Apartment Block CO<br>
+            58429900 Campina Grande - Brazil<br>
+          </address>
+        </div>
       </section>
 
     </main>
@@ -85,12 +99,13 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 
   <script type="text/javascript">
-    var date = new Date();
-    $('#current-year').text(date.getFullYear());
+    d3.select('#current-year').text((new Date()).getFullYear());
   </script>
+
+  <script src="js/timeline.js" charset="utf-8"></script>
 </body>
 </html>

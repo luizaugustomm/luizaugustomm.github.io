@@ -1,0 +1,93 @@
+[
+  {
+    "start_date": "01-02-2009",
+    "end_date": "30-12-2012",
+    "title": "Licentiate in Computer Science",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Learning"
+  },
+  {
+    "start_date": "01-03-2010",
+    "end_date": "01-03-2012",
+    "title": "Undergraduate Tutor in Computer Programming",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Teaching"
+  },
+  {
+    "start_date": "01-03-2010",
+    "end_date": "01-03-2011",
+    "title": "Undergraduate Researcher in Bioinformatics",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Researching"
+  },
+  {
+    "start_date": "01-03-2011",
+    "end_date": "01-03-2012",
+    "title": "Undergraduate Researcher in Intelligent Tutoring Systems",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Researching"
+  },
+  {
+    "start_date": "01-03-2011",
+    "end_date": "01-03-2012",
+    "title": "High School Computer Programming Teacher",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Teaching"
+  },
+  {
+    "start_date": "01-03-2013",
+    "end_date": "29-07-2015",
+    "title": "Master of Science in Computer Science",
+    "institution": "Universidade Federal de Campina Grande",
+    "category": "Learning"
+  },
+  {
+    "start_date": "01-03-2013",
+    "end_date": "29-07-2015",
+    "title": "Researcher in Computer Science Education",
+    "institution": "Universidade Federal de Campina Grande",
+    "category": "Researching"
+  },
+  {
+    "start_date": "01-03-2013",
+    "end_date": "01-03-2014",
+    "title": "Teaching Assistant",
+    "institution": "Universidade Federal de Campina Grande",
+    "category": "Teaching"
+  },
+  {
+    "start_date": "01-02-2015",
+    "end_date": "20-12-2015",
+    "title": "Assistant Professor",
+    "institution": "Universidade Estadual da Paraíba",
+    "category": "Teaching"
+  },
+  {
+    "start_date": "04-03-2016",
+    "end_date": null,
+    "title": "Philosophy Doctor in Computer Science",
+    "institution": "Universidade Federal de Campina Grande",
+    "category": "Learning"
+  },
+  {
+    "start_date": "04-03-2016",
+    "end_date": null,
+    "title": "Researcher in Data Visualization",
+    "institution": "Universidade Federal de Campina Grande",
+    "category": "Researching"
+  },
+  {
+    "start_date": "01-08-2018",
+    "end_date": "01-09-2019",
+    "title": "Visualization Designer",
+    "institution": "Oncoguia",
+    "category": "Practicing"
+  },
+  {
+    "start_date": "01-09-2018",
+    "end_date": "28-02-2019",
+    "title": "Intern at the Institut des Systèmes Intelligents et de Robotique ",
+    "institution": "Sorbonne Université",
+    "category": "Researching"
+  }
+]

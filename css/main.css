@@ -4,6 +4,10 @@
    font-size: 16px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.4rem!important;
