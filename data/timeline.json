@@ -3,8 +3,10 @@
     "start_date": "01-02-2009",
     "end_date": "30-12-2012",
     "title": "Licentiate in Computer Science",
+    "abbreviation": "Graduated",
     "institution": "Universidade Estadual da Paraíba",
-    "category": "Learning"
+    "category": "Learning",
+    "is_graduated": true
   },
   {
     "start_date": "01-03-2010",
@@ -38,8 +40,10 @@
     "start_date": "01-03-2013",
     "end_date": "29-07-2015",
     "title": "Master of Science in Computer Science",
+    "abbreviation": "MSc. in CS",
     "institution": "Universidade Federal de Campina Grande",
-    "category": "Learning"
+    "category": "Learning",
+    "is_graduated": true
   },
   {
     "start_date": "01-03-2013",
@@ -66,8 +70,10 @@
     "start_date": "04-03-2016",
     "end_date": null,
     "title": "Philosophy Doctor in Computer Science",
+    "abbreviation": "PhD in CS",
     "institution": "Universidade Federal de Campina Grande",
-    "category": "Learning"
+    "category": "Learning",
+    "is_graduated": false
   },
   {
     "start_date": "04-03-2016",
