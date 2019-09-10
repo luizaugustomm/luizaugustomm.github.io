@@ -1,11 +1,41 @@
 var parseDate = d3.timeParse('%d-%m-%Y');
 
-var margin = {top: 20, right: 10, bottom: 10, left: 10};
+var getIcon = function(data) {
+
+  if (data.category === 'Learning')
+    return data.finished ? '\uf19d' : '\uf19c';
+
+  if (data.category === 'Researching')
+    return data.subcategory === 'Internship' ? '\uf072' : '\uf0c3';
+
+  if (data.category === 'Teaching')
+    return data.subcategory === 'Teacher' ? '\uf0f2' : '\uf086';
+
+  if (data.category === 'Practicing')
+    return data.subcategory === 'Visualization' ? '\uf080' : '\uf0f2';
+}
+
+var getTextIcon = function(data) {
+
+  if (data.category === 'Learning')
+    return (data.finished ? '<i class="fa fa-graduation-cap"></i> ' : '<i class="fa fa-university"></i> ') + data.title;
+
+  if (data.category === 'Researching')
+    return (data.subcategory === 'Internship' ? '<i class="fa fa-plane"></i> ' : '<i class="fa fa-flask"></i> ') + data.title;
+
+  if (data.category === 'Teaching')
+    return (data.subcategory === 'Teacher' ? '<i class="fa fa-suitcase"></i> ' : '<i class="fa fa-comments"></i> ') + data.title;
+
+  if (data.category === 'Practicing')
+    return (data.subcategory === 'Visualization' ? '<i class="fa fa-bar-chart"></i> ' : '<i class="fa fa-suitcase"></i> ') + data.title;
+}
+
+var margin = {top: 3, right: 10, bottom: 10, left: 10};
 var width = 720 - margin.left - margin.right; // Use the window's width
-var height = 150 - margin.top - margin.bottom; // Use the window's height
-var axisBottom = height - height / 5;
-var strokeWidthIn = 12;
-var strokeWidthOut = 10;
+var height = 100 - margin.top - margin.bottom; // Use the window's height
+var axisBottom = height - height / 5.5;
+var strokeWidthIn = 15;
+var strokeWidthOut = 13;
 var lineOpacity = 0.85;
 
 var svg = d3.select('#timeline-vis')
@@ -16,7 +46,7 @@ var svg = d3.select('#timeline-vis')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleBand().range([height / 1.5, margin.top]);
+var y = d3.scaleBand().range([height / 1.2, margin.top]);
 var fill = d3.scaleOrdinal().range([d3.rgb('#AC3BD4'),
                                    d3.rgb('#FF9840'),
                                    d3.rgb('#34C6CD'),
@@ -67,9 +97,9 @@ d3.json('data/timeline.json').then(function(data) {
    }
    var mousemove = function(d) {
      Tooltip
-       .html('<b>' + d.title + '</b><br>' + d.institution)
-       .style('left', (x(d.end_date)/2) + 'px')
-       .style('top', (y(d.category)) + 'px')
+       .html('<b>' + getTextIcon(d) + '</b><br>' + d.institution)
+       .style('left', (x(d.end_date)*0.6) + 'px')
+       .style('top', (y(d.category)*0.4) + 'px')
    }
    var mouseleave = function(d) {
      Tooltip
@@ -79,13 +109,17 @@ d3.json('data/timeline.json').then(function(data) {
        .style('opacity', lineOpacity)
    }
 
+   // Create marks
+  var marks = svg.append('g')
+     .attr('transform', 'translate(0,' + margin.top + ')')
+
   // Add career lines
-  svg.append('g')
-    .attr('transform', 'translate(0,' + margin.top + ')')
+  marks
     .selectAll('line')
     .data(data)
     .enter()
     .append('line')
+    .style('stroke', (d) => fill(d.category))
     .style('stroke-width', strokeWidthOut)         // adjust line width
     .style('stroke-linecap', 'round')  // stroke-linecap type
     .style('opacity', lineOpacity)
@@ -93,45 +127,33 @@ d3.json('data/timeline.json').then(function(data) {
     .attr('y1', (d) => y(d.category))
     .attr('x2', (d) => x(d.end_date))
     .attr('y2', (d) => y(d.category))
-    .attr('stroke', (d) => fill(d.category))
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave);
 
-  // Add degrees
-  var degrees = svg.append('g')
-    .attr('transform', 'translate(0, 0)')
+  // Add career dots
+  marks
+    .selectAll('circle')
+    .data(data)
+    .enter()
+    .append('circle')
+    .style('stroke', (d) => fill(d.category))
+    .style('stroke-width', 2)
+    .style('fill', (d) => d.finished ? fill(d.category) : 'white')
+    .attr('cx', (d) => x(d.end_date))
+    .attr('cy', (d) => y(d.category))
+    .attr('r', strokeWidthOut / 2.7)
 
-  // Dots
-  degrees
-  .selectAll('circle')
-  .data(data.filter((d) => d.category === 'Learning' && d.is_graduated))
-  .enter()
-  .append('circle')
-  .attr('cx', (d) => x(d.end_date))
-  .attr('cy', margin.top)
-  .attr('r', 5)
-
-  // Lines
-  degrees
-  .selectAll('line')
-  .data(data.filter((d) => d.category === 'Learning' && d.is_graduated))
-  .enter()
-  .append('line')
-  .style('stroke', 'black')
-  .style('stroke-width', 2)
-  .attr('x1', (d) => x(d.end_date))
-  .attr('x2', (d) => x(d.end_date))
-  .attr('y1', axisBottom)
-  .attr('y2', margin.top)
-
-  degrees
-  .selectAll('text')
-  .data(data.filter((d) => d.category === 'Learning' && d.is_graduated))
-  .enter()
-  .append('text')
-  .attr('x', (d) => x(d.end_date)*0.9)
-  .attr('y', margin.top-10)
-  .text((d) => d.abbreviation)
+  marks
+    .selectAll('text')
+    .data(data)
+    .enter()
+    .append('text')
+    .text((d) => getIcon(d))
+    .style('font-family', 'FontAwesome')
+    .style('font-size', '11px')
+    .style('fill', 'white')
+    .attr('x', (d) => x(d.start_date))
+    .attr('y', (d) => y(d.category) + 5)
 
 });
