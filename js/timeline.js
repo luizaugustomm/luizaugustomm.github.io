@@ -95,10 +95,15 @@ d3.json('data/timeline.json').then(function(data) {
     d3.select('#hover-tip')
       .attr('class', 'invisible')
    }
+   const bisectDate = d3.bisector(d => d.start_date).right;
    var mousemove = function(d) {
+     const xValue = x.invert(d3.mouse(this)[0]);
+     const mouseI = bisectDate(data, xValue, 1);
+     const mouseD = data[mouseI];
+
      Tooltip
        .html('<b>' + getTextIcon(d) + '</b><br>' + d.institution)
-       .style('left', (x(d.end_date)*0.6) + 'px')
+       .style('left', x(mouseD.start_date)/1.5 + 'px')
        .style('top', (y(d.category)*0.4) + 'px')
    }
    var mouseleave = function(d) {
