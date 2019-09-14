@@ -1,5 +1,19 @@
 
+var parseDate = d3.timeParse('%d-%m-%Y');
+
+function sortByDateDescending(a, b) {
+    // Dates will be cast to numbers automagically:
+    return b.date - a.date;
+}
+
 d3.json('data/projects.json').then(function(data) {
+  // Parsing dates
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+  });
+
+  data = data.sort(sortByDateDescending);
+
   const cards = d3.select('#cards')
     .selectAll('div')
     .data(data)
@@ -31,5 +45,10 @@ d3.json('data/projects.json').then(function(data) {
     .append('div')
     .attr('class', 'card-text')
     .text(d => d.description)
+
+  cards
+    .append('div')
+    .attr('class', 'card-footer')
+    .text(d => d.date.getFullYear())
 
 });
