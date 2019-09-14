@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Our Activity",
+    "description": "Study on the user experience with situated visualizations in semi-public spaces",
+    "cover": "img/our-activity.png",
+    "date": "01-06-2018",
+    "category": "research",
+    "isPublic": true,
+    "url": "https://luizaugustomm.github.io/papers/2019_pacificvis_defamiliarization.pdf"
+  },
+
+  {
+    "title": "Harassments in Açude",
+    "description": "Study on situated physicalizations about sexual harassments in public spaces",
+    "cover": "img/harassments.jpeg",
+    "date": "01-01-2020",
+    "category": "research",
+    "isPublic": false,
+    "url": "#"
+  },
+
+  {
+    "title": "Anthropographics",
+    "description": "Series of experiments to examine the effect of anthropographics on prosocial behavior",
+    "cover": "img/anthropographics.png",
+    "date": "01-06-2018",
+    "category": "research",
+    "isPublic": false,
+    "url": "#"
+  },
+
+  {
+    "title": "OncoVis",
+    "description": "Oncoguia's visualizations about cancer patients",
+    "cover": "img/oncoguia.png",
+    "date": "01-06-2018",
+    "category": "practice",
+    "isPublic": true,
+    "url": "https://nazareno.github.io/oncoguia"
+  }
+]
