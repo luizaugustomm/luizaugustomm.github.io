@@ -34,7 +34,7 @@ var margin = {top: 20, right: 10, bottom: 10, left: 10};
 var width = 720 - margin.left - margin.right; // Use the window's width
 var height = 200 - margin.top - margin.bottom; // Use the window's height
 var axisBottom = height - height / 4;
-var strokeWidthIn = 15;
+var strokeWidthIn = 17;
 var strokeWidthOut = 13;
 var lineOpacity = 0.85;
 
@@ -84,7 +84,8 @@ d3.json('data/timeline.json').then(function(data) {
       .attr('class', 'tooltip')
       .style('background-color', 'floralwhite')
       .style('border-radius', '5px')
-      .style('padding', '3px');
+      .style('padding', '3px')
+      .attr('id', 'tooltip');
 
     // Three function that change the tooltip when user hover / move / leave a cell
    var mouseover = function(d) {
