@@ -30,10 +30,10 @@ var getTextIcon = function(data) {
     return (data.subcategory === 'Visualization' ? '<i class="fa fa-bar-chart"></i> ' : '<i class="fa fa-suitcase"></i> ') + data.title;
 }
 
-var margin = {top: 3, right: 10, bottom: 10, left: 10};
+var margin = {top: 20, right: 10, bottom: 10, left: 10};
 var width = 720 - margin.left - margin.right; // Use the window's width
-var height = 100 - margin.top - margin.bottom; // Use the window's height
-var axisBottom = height - height / 5.5;
+var height = 200 - margin.top - margin.bottom; // Use the window's height
+var axisBottom = height - height / 4;
 var strokeWidthIn = 15;
 var strokeWidthOut = 13;
 var lineOpacity = 0.85;
@@ -46,7 +46,7 @@ var svg = d3.select('#timeline-vis')
   .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
 var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleBand().range([height / 1.2, margin.top]);
+var y = d3.scaleBand().range([height / 1.5, margin.top]);
 var fill = d3.scaleOrdinal().range([d3.rgb('#AC3BD4'),
                                    d3.rgb('#FF9840'),
                                    d3.rgb('#34C6CD'),
@@ -60,7 +60,8 @@ d3.json('data/timeline.json').then(function(data) {
   // Parsing dates
   data.forEach(function(d) {
     d.start_date = parseDate(d.start_date);
-    d.end_date = d.end_date == null ? new Date() : parseDate(d.end_date) ;
+    d.finished = d.end_date !== null;
+    d.end_date = d.end_date == null ? new Date() : parseDate(d.end_date);
   });
 
 
@@ -83,7 +84,7 @@ d3.json('data/timeline.json').then(function(data) {
       .attr('class', 'tooltip')
       .style('background-color', 'floralwhite')
       .style('border-radius', '5px')
-      .style('padding', '3px')
+      .style('padding', '3px');
 
     // Three function that change the tooltip when user hover / move / leave a cell
    var mouseover = function(d) {
@@ -93,25 +94,21 @@ d3.json('data/timeline.json').then(function(data) {
        .style('stroke-width', strokeWidthIn)
        .style('opacity', 1)
     d3.select('#hover-tip')
-      .attr('class', 'invisible')
+      .attr('class', 'invisible');
    }
-   const bisectDate = d3.bisector(d => d.start_date).right;
+   var clampX = (pos0) => pos0 > 520 ? pos0 - 150 : pos0;
    var mousemove = function(d) {
-     const xValue = x.invert(d3.mouse(this)[0]);
-     const mouseI = bisectDate(data, xValue, 1);
-     const mouseD = data[mouseI];
-
      Tooltip
        .html('<b>' + getTextIcon(d) + '</b><br>' + d.institution)
-       .style('left', x(mouseD.start_date)/1.5 + 'px')
-       .style('top', (y(d.category)*0.4) + 'px')
+       .style('left', (clampX(d3.mouse(this)[0]) - 100)+ 'px')
+       .style('top', d3.mouse(this)[1] + 'px');
    }
    var mouseleave = function(d) {
      Tooltip
        .style('opacity', 0)
      d3.select(this)
        .style('stroke-width', strokeWidthOut)
-       .style('opacity', lineOpacity)
+       .style('opacity', lineOpacity);
    }
 
    // Create marks
