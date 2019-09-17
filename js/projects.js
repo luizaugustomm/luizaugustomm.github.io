@@ -23,8 +23,7 @@ d3.json('data/projects.json').then(function(data) {
     .attr('onclick', d => 'window.open("' + d.url + '")' )
     .style('display', d => d.isPublic ? 'inherit' : 'none')
     .append('div')
-    .attr('class', d => 'card card-' + d.category)
-    .attr('style', 'width: 14em;');
+    .attr('class', d => 'card card-' + d.category);
 
   cards
     .append('img')
