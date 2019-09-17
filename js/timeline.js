@@ -31,8 +31,8 @@ var getTextIcon = function(data) {
 }
 
 var margin = {top: 20, right: 10, bottom: 10, left: 10};
-var width = 720 - margin.left - margin.right; // Use the window's width
-var height = 200 - margin.top - margin.bottom; // Use the window's height
+var width = parseInt(d3.select('#timeline-vis').style('width'), 10) - margin.left - margin.right;
+var height = 200 - margin.top - margin.bottom;
 var axisBottom = height - height / 4;
 var strokeWidthIn = 17;
 var strokeWidthOut = 13;
