@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dr. Luiz Morais' professional website. It has information about his research interests, projects, and papers published.">
+    <meta name="keywords" content="luiz morais, data visualization, visualization, physicalization, professional website, computer science, ufcg, inria, brazilian, chi, ieee, vis, infovis">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway:400,600&display=swap" rel="stylesheet">
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>Anthropographics Design Space</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="mx-auto col-sm-12 col-md-8">
+        <main class="container align-items-center">
+          <header class="bg-white sticky-top d-none d-md-block">
+              <a href="/"><i class="fa fa-arrow-left"></i> Back to Homepage</a>
+          </header>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <h2>Anthropographics Design Space</h2>
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/anthropographics-ds.png" alt="description of dimensions in the anthropographics design space" height="400">
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <p>
+                Anthropographics is a rich and growing area, but the work so far has been scattered. As such, the visualization community presently lacks a precise language for discussing anthropographics, as well as an overview of design strategies and opportunities for design.
+              </p>
+              <p>
+                <a href="http://dragice.fr/" target="_blank">Pierre Dragicevic</a>, <a href="http://yvonnejansen.me/" target="
+                ">Yvonne Jansen</a>, <a href="https://twitter.com/zananeno" target="_blank">Nazareno Andrade</a>, and I contribute to filling this gap by proposing a design space and conceptual framework that are meant to help researchers and practitioners reason and communicate about anthropographics. We provide conceptual foundations and a language to facilitate the design, critique, comparison, and empirical evaluation of anthropographics.
+              </p>
+              <p>
+                Our design space consists of seven design dimensions that can be reasonably believed to have some effect on prosocial feelings or behavior, namely: granularity, specificity, coverage, authenticity, realism, physicality, and situatedness. These dimensions were identified by examining a collection of 105 communicative visualizations that convey data about people, some of which are anthropographics and some of which are not (e.g., some are conventional statistical charts).
+              </p>
+              <h3>Paper</h3>
+              <p>
+                We submitted a paper about the design space of Anthropographics to the IEEE Transactions on Visualizations and Computer Graphics (TVCG). The paper is currently under review and will probably be published in the next months.
+              </p>
+              <h3>Anthropographics List</h3>
+              <p>
+                We also created a <a href="/anthropographics">corpus of anthropographics</a>, which is part of the additional materials in the paper.
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer text-center">
+          <div class="container">
+            <p>&copy; <span id="current-year"></span> Luiz Morais</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      d3.select('#current-year').text((new Date()).getFullYear());
+    </script>
+  </body>
+</html>

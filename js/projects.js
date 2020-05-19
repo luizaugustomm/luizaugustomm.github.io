@@ -20,10 +20,10 @@ d3.json('data/projects.json').then(function(data) {
     .enter()
     .append('div')
     .attr('class', 'col-sm-6 col-md-4 col-lg-3 mb-2 mx-4')
-    .attr('onclick', d => 'window.open("' + d.url + '")' )
     .style('display', d => d.isPublic ? 'inherit' : 'none')
     .append('div')
-    .attr('class', d => 'card card-' + d.category);
+    .attr('class', d => 'card card-' + d.category)
+    .on('click', d => window.location.href = d.url);
 
   cards
     .append('img')
@@ -38,7 +38,7 @@ d3.json('data/projects.json').then(function(data) {
   cardBodies
     .append('h5')
     .attr('class', 'card-title')
-    .text(d => d.title)
+    .html(d => (d.isExternalLink ? '<small><i class="fa fa-external-link"></i></small>  ' : '') + d.title)
 
   cardBodies
     .append('div')

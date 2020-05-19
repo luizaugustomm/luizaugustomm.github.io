@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dr. Luiz Morais' professional website. It has information about his research interests, projects, and papers published.">
+    <meta name="keywords" content="luiz morais, data visualization, visualization, physicalization, professional website, computer science, ufcg, inria, brazilian, chi, ieee, vis, infovis">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway:400,600&display=swap" rel="stylesheet">
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>Our Activity</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="mx-auto col-sm-12 col-md-8">
+        <main class="container align-items-center">
+          <header class="bg-white sticky-top d-none d-md-block">
+              <a href="/"><i class="fa fa-arrow-left"></i> Back to Homepage</a>
+          </header>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <h2>Our Activity</h2>
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/our-activity.png" height="400">
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <p>
+                This work explores the user experience with two situated visualizations that lie on different points of design space. The first visualization — the Activity Clock — displays the aggregate presence of laboratory members into a wall clock. The second — Personal Activities — represents the same persons individually, in a conventional poster media.
+              </p>
+              <p>
+                We interviewed 17 participants and leverage a theoretical lens of Continuous Engagement and Sense-Making to study how design decisions impact the user experience with respect to (1) which design factors attract users, (2) how design features affect users’ understanding of the visualization, and (3) what kind of reflections are evoked by design.
+              </p>
+              <p>
+                We discuss how the defamiliarizing effect of the Activity Clock plays a dual role in attracting users while also hindering their understanding of the data. We also consider the evidence that fine representation granularity in the Personal Activities evokes deeper reflections.
+              </p>
+              <h3>Paper</h3>
+              <p>
+                We published a paper entitled <em><a href="/papers/2019_pacificvis_defamiliarization.pdf" target="
+                  ">Defamiliarization, Representation Granularity, and User Experience: a Qualitative Study with Two Situated Visualizations</a></em> in the 2019 IEEE Pacific Visualization Symposium (PacificVis).
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer text-center">
+          <div class="container">
+            <p>&copy; <span id="current-year"></span> Luiz Morais</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      d3.select('#current-year').text((new Date()).getFullYear());
+    </script>
+  </body>
+</html>

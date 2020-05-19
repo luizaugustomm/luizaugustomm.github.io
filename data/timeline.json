@@ -68,14 +68,14 @@
   },
   {
     "start_date": "04-03-2016",
-    "end_date": null,
-    "title": "PhD Candidate in Computer Science",
+    "end_date": "02-03-2020",
+    "title": "Philosophy Doctor in Computer Science",
     "institution": "Universidade Federal de Campina Grande",
     "category": "Learning"
   },
   {
     "start_date": "04-03-2016",
-    "end_date": null,
+    "end_date": "02-03-2020",
     "title": "Researcher in Data Visualization",
     "institution": "Universidade Federal de Campina Grande",
     "category": "Researching"
@@ -95,5 +95,37 @@
     "institution": "Sorbonne Université",
     "category": "Researching",
     "subcategory": "Internship"
+  },
+  {
+    "start_date": "01-12-2019",
+    "end_date": "30-04-2020",
+    "title": "Visualization Designer",
+    "institution": "LightMe Project (UFCG)",
+    "category": "Practicing",
+    "subcategory": "Visualization"
+  },
+  {
+    "start_date": "01-12-2019",
+    "end_date": "31-12-2019",
+    "title": "Visiting Professor (Data Visualization)",
+    "institution": "Unifacisa - Data Science Specialization",
+    "category": "Teaching",
+    "subcategory": "Teacher"
+  },
+  {
+    "start_date": "01-03-2020",
+    "end_date": "31-03-2020",
+    "title": "Visiting Professor (Data Visualization)",
+    "institution": "Unifacisa - Data Science Specialization",
+    "category": "Teaching",
+    "subcategory": "Teacher"
+  },
+  {
+    "start_date": "04-05-2020",
+    "end_date": null,
+    "title": "UX and Visualization Specialist",
+    "institution": "Transparência Brasil",
+    "category": "Practicing",
+    "subcategory": "UX"
   }
 ]

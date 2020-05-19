@@ -6,36 +6,84 @@
     "date": "01-06-2018",
     "category": "research",
     "isPublic": true,
-    "url": "https://luizaugustomm.github.io/papers/2019_pacificvis_defamiliarization.pdf"
+    "url": "pages/our-activity.html",
+    "isExternalLink": false
   },
 
   {
-    "title": "Harassments in Açude",
+    "title": "Harassment Plants",
     "description": "Study on situated physicalizations about sexual harassments in public spaces",
-    "cover": "img/harassments.jpeg",
-    "date": "01-01-2020",
+    "cover": "img/harassments.jpg",
+    "date": "01-08-2018",
     "category": "research",
-    "isPublic": false,
-    "url": "#"
+    "isPublic": true,
+    "url": "pages/harassment-plants.html",
+    "isExternalLink": false
   },
 
   {
-    "title": "Anthropographics",
+    "title": "Anthropographics Study",
     "description": "Series of experiments to examine the effect of anthropographics on prosocial behavior",
     "cover": "img/anthropographics.png",
     "date": "01-06-2018",
     "category": "research",
     "isPublic": false,
-    "url": "#"
+    "url": "#",
+    "isExternalLink": false
   },
 
   {
-    "title": "OncoVis",
+    "title": "Visualizations about Cancer",
     "description": "Oncoguia's visualizations about cancer patients",
     "cover": "img/oncoguia.png",
     "date": "01-06-2019",
     "category": "practice",
     "isPublic": true,
-    "url": "https://nazareno.github.io/oncoguia"
+    "url": "https://nazareno.github.io/oncoguia",
+    "isExternalLink": true
+  },
+
+  {
+    "title": "Anthropographics Design Space",
+    "description": "Design space of visualizations about people that are intended to promote prosocial feelings and behavior",
+    "cover": "img/anthropographics-ds.png",
+    "date": "01-03-2020",
+    "category": "research",
+    "isPublic": true,
+    "url": "pages/anthropographics-ds.html",
+    "isExternalLink": false
+  },
+
+  {
+    "title": "List of Anthropographics",
+    "description": "A corpus of visualizations about people that are mostly intended to promote prosocial feelings and behavior",
+    "cover": "img/anthropographics-list.png",
+    "date": "01-03-2020",
+    "category": "other",
+    "isPublic": true,
+    "url": "/anthropographics",
+    "isExternalLink": false
+  },
+
+  {
+    "title": "Thesis",
+    "description": "Designing for More than Efficacy: Investigating the Role of Anthropographics on Compassion",
+    "cover": "img/thesis.png",
+    "date": "01-03-2020",
+    "category": "education",
+    "isPublic": true,
+    "url": "/papers/2020_morais_thesis.pdf",
+    "isExternalLink": true
+  },
+
+  {
+    "title": "COVID-19 Visualizations",
+    "description": "A series of visualizations about corona virus in Brazil",
+    "cover": "img/covid.png",
+    "date": "01-04-2020",
+    "category": "practice",
+    "isPublic": true,
+    "url": "https://observablehq.com/collection/@luizaugustomm/covid-19",
+    "isExternalLink": true
   }
 ]

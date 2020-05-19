@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dr. Luiz Morais' professional website. It has information about his research interests, projects, and papers published.">
+    <meta name="keywords" content="luiz morais, data visualization, visualization, physicalization, professional website, computer science, ufcg, inria, brazilian, chi, ieee, vis, infovis">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway:400,600&display=swap" rel="stylesheet">
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>Harassment Plants</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="mx-auto col-sm-12 col-md-8">
+        <main class="container align-items-center">
+          <header class="bg-white sticky-top d-none d-md-block">
+              <a href="/"><i class="fa fa-arrow-left"></i> Back to Homepage</a>
+          </header>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <h2>Harassment Plants</h2>
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/harassments.jpg" height="310">
+            </div>
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/harassment-plants.png" height="310">
+            </div>
+          </section>
+
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <p>
+                <a href="https://twitter.com/zananeno" target="_blank">Nazareno Andrade</a>, <a href="https://dandaramcsousa.github.io/"  target="_blank">Dandara Sousa</a>, and I created a situated physicalization as part of a research project where researchers investigated the effect of visualization’s situatedness and physicality on compassion.
+              </p>
+              <p>
+                Harassment Plants is a situated, physical, and fine-grained — maximum granularity — anthropographic. Each vase represents a different category of harassment and contains glyphs of the same type. The color in the middle of the vase corresponds to the type of harassment, which is also represented by the same color in one of the beads. Each glyph is composed of a rod — which represents the period of the day the harassment occurred — and a pendant with multiple beads — which corresponds to the reaction of the victim, the perceived age of the harasser, etc.
+              </p>
+            </div>
+            <div class="col-5">
+              <img class="rounded" src="/img/in-acude.jpg" height="400">
+            </div>
+          </section>
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/hp-vase.png" height="310">
+            </div>
+            <div class="col">
+              <img class="rounded mx-auto d-block" src="/img/hp-legend.png" height="310">
+            </div>
+          </section>
+          <section class="row mb-4 align-items-center">
+            <div class="col">
+              <h3>More information</h3>
+              <p>
+                The design process of the Harassment Plants and the study are available in chapters 4 and 5 of my <a href="/papers/2020_morais_thesis.pdf" target="
+                ">thesis</a>.
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <footer class="footer text-center">
+          <div class="container">
+            <p>&copy; <span id="current-year"></span> Luiz Morais</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      d3.select('#current-year').text((new Date()).getFullYear());
+    </script>
+  </body>
+</html>

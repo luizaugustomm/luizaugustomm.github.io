@@ -1,6 +1,14 @@
 var parseDate = d3.timeParse('%d-%m-%Y');
+var formatDate = d3.timeFormat('%b/%Y');
+function getEndDateFormat(d) {
+  if (!d.finished)
+    return ' - today';
+  if (formatDate(d.start_date) === formatDate(d.end_date))
+    return '';
+  return ` - ${formatDate(d.end_date)}`;
+}
 
-var getIcon = function(data) {
+function getIcon(data) {
 
   if (data.category === 'Learning')
     return data.finished ? '\uf19d' : '\uf19c';
@@ -11,11 +19,18 @@ var getIcon = function(data) {
   if (data.category === 'Teaching')
     return data.subcategory === 'Teacher' ? '\uf0f2' : '\uf086';
 
-  if (data.category === 'Practicing')
-    return data.subcategory === 'Visualization' ? '\uf080' : '\uf0f2';
+  if (data.category === 'Practicing') {
+    if (data.subcategory === 'Visualization') {
+      return '\uf080';
+    } else if (data.subcategory === 'UX') {
+      return '\uf25a';
+    } else {
+      return '\uf0f2';
+    }
+  }
 }
 
-var getTextIcon = function(data) {
+function getTextIcon(data) {
 
   if (data.category === 'Learning')
     return (data.finished ? '<i class="fa fa-graduation-cap"></i> ' : '<i class="fa fa-university"></i> ') + data.title;
@@ -26,31 +41,38 @@ var getTextIcon = function(data) {
   if (data.category === 'Teaching')
     return (data.subcategory === 'Teacher' ? '<i class="fa fa-suitcase"></i> ' : '<i class="fa fa-comments"></i> ') + data.title;
 
-  if (data.category === 'Practicing')
-    return (data.subcategory === 'Visualization' ? '<i class="fa fa-bar-chart"></i> ' : '<i class="fa fa-suitcase"></i> ') + data.title;
+  if (data.category === 'Practicing') {
+    if (data.subcategory === 'Visualization') {
+      return '<i class="fa fa-bar-chart"></i> ' + data.title;
+    } else if (data.subcategory === 'UX') {
+      return '<i class="far fa-hand-pointer"></i> ' + data.title;
+    } else {
+      return '<i class="fa fa-suitcase"></i> ' + data.title;
+    }
+  }
 }
 
 var margin = {top: 20, right: 10, bottom: 10, left: 10};
 var width = parseInt(d3.select('#timeline-vis').style('width'), 10) - margin.left - margin.right;
-var height = 200 - margin.top - margin.bottom;
+var height = 150 - margin.top - margin.bottom;
 var axisBottom = height - height / 4;
 var strokeWidthIn = 17;
 var strokeWidthOut = 13;
-var lineOpacity = 0.85;
+var lineOpacity = 0.65;
 
 var svg = d3.select('#timeline-vis')
   .append('svg')
   .attr('width', width + margin.left + margin.right)
   .attr('height', height + margin.top + margin.bottom)
   .append('g')
-  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+  .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
 var x = d3.scaleTime().range([0, width]);
 var y = d3.scaleBand().range([height / 1.5, margin.top]);
-var fill = d3.scaleOrdinal().range([d3.rgb('#AC3BD4'),
-                                   d3.rgb('#FF9840'),
-                                   d3.rgb('#34C6CD'),
-                                   d3.rgb('#F2FD3F')
+var fill = d3.scaleOrdinal().range([d3.rgb('#9c27b0'),
+                                   d3.rgb('#ff9800'),
+                                   d3.rgb('#2196f3'),
+                                   d3.rgb('#e91e63')
                                   ]);
 
 var xAxis = d3.axisBottom(x).ticks(d3.timeYear.every(1));
@@ -92,7 +114,10 @@ d3.json('data/timeline.json').then(function(data) {
      Tooltip
        .style('opacity', 1)
      d3.select(this)
-       .style('stroke-width', strokeWidthIn)
+       .select('line')
+       .style('opacity', 1)
+     d3.select(this)
+       .select('circle')
        .style('opacity', 1)
     d3.select('#hover-tip')
       .attr('class', 'invisible');
@@ -100,7 +125,7 @@ d3.json('data/timeline.json').then(function(data) {
    var clampX = (pos0) => pos0 > 520 ? pos0 - 150 : pos0;
    var mousemove = function(d) {
      Tooltip
-       .html('<b>' + getTextIcon(d) + '</b><br>' + d.institution)
+       .html(`<b>${getTextIcon(d)}</b><br>${d.institution}<br>${formatDate(d.start_date) + getEndDateFormat(d)}`)
        .style('left', (clampX(d3.mouse(this)[0]) - 100)+ 'px')
        .style('top', d3.mouse(this)[1] + 'px');
    }
@@ -108,7 +133,10 @@ d3.json('data/timeline.json').then(function(data) {
      Tooltip
        .style('opacity', 0)
      d3.select(this)
-       .style('stroke-width', strokeWidthOut)
+       .select('line')
+       .style('opacity', lineOpacity);
+     d3.select(this)
+       .select('circle')
        .style('opacity', lineOpacity);
    }
 
@@ -118,45 +146,44 @@ d3.json('data/timeline.json').then(function(data) {
 
   // Add career lines
   marks
-    .selectAll('line')
+    .selectAll('g')
     .data(data)
-    .enter()
-    .append('line')
-    .style('stroke', (d) => fill(d.category))
-    .style('stroke-width', strokeWidthOut)         // adjust line width
-    .style('stroke-linecap', 'round')  // stroke-linecap type
-    .style('opacity', lineOpacity)
-    .attr('x1', (d) => x(d.start_date))
-    .attr('y1', (d) => y(d.category))
-    .attr('x2', (d) => x(d.end_date))
-    .attr('y2', (d) => y(d.category))
+    .join('g')
+    .call(g =>
+      g
+      .append('line')
+      .style('stroke', (d) => fill(d.category))
+      .style('stroke-width', strokeWidthOut)         // adjust line width
+      .style('stroke-linecap', 'round')  // stroke-linecap type
+      .style('opacity', lineOpacity)
+      .attr('x1', (d) => x(d.start_date))
+      .attr('y1', (d) => y(d.category))
+      .attr('x2', (d) => x(d.end_date))
+      .attr('y2', (d) => y(d.category))
+    )
+    .call(g =>
+      g
+      .append('circle')
+      .style('stroke', (d) => fill(d.category))
+      .style('stroke-width', 2)
+      .style('fill', (d) => d.finished ? fill(d.category) : 'white')
+      .style('opacity', lineOpacity)
+      .attr('cx', (d) => x(d.end_date))
+      .attr('cy', (d) => y(d.category))
+      .attr('r', strokeWidthOut / 2.7)
+    )
+    .call(g =>
+      g
+      .append('text')
+      .text((d) => getIcon(d))
+      .style('font-family', 'FontAwesome')
+      .style('font-size', '11px')
+      .style('fill', 'white')
+      .attr('x', (d) => x(d.start_date) - 3)
+      .attr('y', (d) => y(d.category) + 5)
+    )
+    .style('cursor', 'default')
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave);
-
-  // Add career dots
-  marks
-    .selectAll('circle')
-    .data(data)
-    .enter()
-    .append('circle')
-    .style('stroke', (d) => fill(d.category))
-    .style('stroke-width', 2)
-    .style('fill', (d) => d.finished ? fill(d.category) : 'white')
-    .attr('cx', (d) => x(d.end_date))
-    .attr('cy', (d) => y(d.category))
-    .attr('r', strokeWidthOut / 2.7)
-
-  marks
-    .selectAll('text')
-    .data(data)
-    .enter()
-    .append('text')
-    .text((d) => getIcon(d))
-    .style('font-family', 'FontAwesome')
-    .style('font-size', '11px')
-    .style('fill', 'white')
-    .attr('x', (d) => x(d.start_date))
-    .attr('y', (d) => y(d.category) + 5)
-
 });

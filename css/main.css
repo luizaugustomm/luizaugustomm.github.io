@@ -1,16 +1,11 @@
 
-* {
+email, address {
    font-family: 'Inconsolata', monospace;
    font-size: 1rem;
 }
 
 html {
   scroll-behavior: smooth;
-}
-
-h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.4rem!important;
 }
 
 .main-nav ul {
@@ -57,20 +52,45 @@ h1 {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 600;
   font-size: 16px;
+  color: white;
 }
 
 .card-text {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 400;
   font-size: 12px;
-}
-
-.card-research {
-  background-color: #34C6CD!important;
   color: white;
 }
 
+.card-research {
+  background-color: #2196f3!important;
+}
+
+.card-research > .card-footer {
+  color: #095fa5;
+}
+
+.card-education {
+  background-color: #9c27b0!important;
+}
+
+.card-education > .card-footer {
+  color: #51145c;
+}
+
+
 .card-practice {
-  background-color: #F2FD3F!important;
-  color: black;
+  background-color: #e91e63!important;
+}
+
+.card-practice > .card-footer {
+  color: #950f3b;
+}
+
+.card-other {
+  background-color: #9e9e9e!important;
+}
+
+.card-other > .card-footer {
+  color: #6b6b6b;
 }
