@@ -77,6 +77,17 @@
   },
 
   {
+    "title": "🇧🇷DataViz Course @ Unifacisa",
+    "description": "Slides from my DataViz course in the Data Science Specialization at Unifacisa",
+    "cover": "img/default.png",
+    "date": "01-03-2020",
+    "category": "teaching",
+    "isPublic": true,
+    "url": "/pages/unifacisa-dataviz-course.html",
+    "isExternalLink": false
+  },
+
+  {
     "title": "COVID-19 Visualizations",
     "description": "A series of visualizations about corona virus in Brazil",
     "cover": "img/covid.png",

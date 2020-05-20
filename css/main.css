@@ -87,6 +87,14 @@ html {
   color: #950f3b;
 }
 
+.card-teaching {
+  background-color: #ff9800!important;
+}
+
+.card-teaching > .card-footer {
+  color: #995c00;
+}
+
 .card-other {
   background-color: #9e9e9e!important;
 }
