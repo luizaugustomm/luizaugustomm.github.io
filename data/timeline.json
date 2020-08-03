@@ -91,8 +91,8 @@
   {
     "start_date": "01-09-2018",
     "end_date": "28-02-2019",
-    "title": "Intern at the Institut des Systèmes Intelligents et de Robotique ",
-    "institution": "Sorbonne Université",
+    "title": "Intern in Data Visualizations",
+    "institution": "ISIR - Sorbonne Université",
     "category": "Researching",
     "subcategory": "Internship"
   },
@@ -121,11 +121,26 @@
     "subcategory": "Teacher"
   },
   {
-    "start_date": "04-05-2020",
-    "end_date": null,
-    "title": "UX and Visualization Specialist",
+    "start_date": "01-05-2020",
+    "end_date": "31-07-2020",
+    "title": "UX Specialist and Software Engineer",
     "institution": "Transparência Brasil",
     "category": "Practicing",
     "subcategory": "UX"
+  },
+  {
+    "start_date": "01-06-2020",
+    "end_date": "31-07-2020",
+    "title": "UX Specialist and Software Engineer",
+    "institution": "Dado Capital",
+    "category": "Practicing",
+    "subcategory": "UX"
+  },
+  {
+    "start_date": "01-08-2020",
+    "end_date": null,
+    "title": "Post-doctoral Fellow",
+    "institution": "Aviz - INRIA",
+    "category": "Researching"
   }
 ]
