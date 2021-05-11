@@ -3,7 +3,7 @@
     "title": "Our Activity",
     "description": "Study on the user experience with situated visualizations in semi-public spaces",
     "cover": "img/our-activity.png",
-    "date": "01-06-2018",
+    "date": "01-06-2019",
     "category": "research",
     "isPublic": true,
     "url": "pages/our-activity.html",
@@ -14,21 +14,10 @@
     "title": "Harassment Plants",
     "description": "Study on situated physicalizations about sexual harassments in public spaces",
     "cover": "img/harassments.jpg",
-    "date": "01-08-2018",
+    "date": "01-08-2020",
     "category": "research",
     "isPublic": true,
     "url": "pages/harassment-plants.html",
-    "isExternalLink": false
-  },
-
-  {
-    "title": "Anthropographics Study",
-    "description": "Series of experiments to examine the effect of anthropographics on prosocial behavior",
-    "cover": "img/anthropographics.png",
-    "date": "01-06-2018",
-    "category": "research",
-    "isPublic": false,
-    "url": "#",
     "isExternalLink": false
   },
 
@@ -95,6 +84,17 @@
     "category": "practice",
     "isPublic": true,
     "url": "https://observablehq.com/collection/@luizaugustomm/covid-19",
+    "isExternalLink": true
+  },
+
+  {
+    "title": "Can Anthropographics Promote Prosociality?",
+    "description": "CHI 2021 paper that evaluates the effect of anthropographics on compassion",
+    "cover": "img/exp1-richfirst.jpeg",
+    "date": "12-05-2021",
+    "category": "research",
+    "isPublic": true,
+    "url": "https://anthropographics.github.io/",
     "isExternalLink": true
   }
 ]
