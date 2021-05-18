@@ -96,5 +96,16 @@
     "isPublic": true,
     "url": "https://anthropographics.github.io/",
     "isExternalLink": true
+  },
+
+  {
+    "title": "Lumiphys: Designing a Long-Term Energy Physicalization to Democratize Smart Campus Data",
+    "description": "e-Energy 2021 paper that proposes an energy physicalization and describes its design process",
+    "cover": "img/lumiphys.jpg",
+    "date": "18-05-2021",
+    "category": "research",
+    "isPublic": true,
+    "url": "https://www.researchgate.net/publication/351660536_Lumiphys_Designing_a_Long-Term_Energy_Physicalization_to_Democratize_Smart_Campus_Data",
+    "isExternalLink": true
   }
 ]
