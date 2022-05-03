@@ -12,7 +12,7 @@
 
   {
     "title": "Harassment Plants",
-    "description": "Study on situated physicalizations about sexual harassments in public spaces",
+    "description": "EuroVis 2022 paper that reports findings on situated physicalizations about sexual harassments in public spaces",
     "cover": "img/harassments.jpg",
     "date": "13-06-2022",
     "category": "research",
@@ -34,7 +34,7 @@
 
   {
     "title": "Anthropographics Design Space",
-    "description": "Design space of visualizations about people that are intended to promote prosocial feelings and behavior",
+    "description": "TVCG paper that proposes a design space of visualizations about people designed to promote prosocial feelings and behavior",
     "cover": "img/anthropographics-ds.png",
     "date": "01-03-2020",
     "category": "research",
