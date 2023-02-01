@@ -142,5 +142,12 @@
     "title": "Post-doctoral Fellow",
     "institution": "Inria",
     "category": "Researching"
+  },
+  {
+    "start_date": "15-01-2023",
+    "end_date": null,
+    "title": "Research Assistant",
+    "institution": "Voxar Labs",
+    "category": "Researching"
   }
 ]
